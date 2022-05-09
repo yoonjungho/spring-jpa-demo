@@ -1,26 +1,32 @@
 package com.ysy.jpa.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "YSY_USER_MST")
 @Builder
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class YsyUser {
+public class YsyUser extends BaseEntity implements Serializable{
 	
 //	@Id
 //	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,4 +46,5 @@ public class YsyUser {
 	private String phone; 
 	@Column(name = "USER_GRP")
 	private String grp; 
+	
 }
